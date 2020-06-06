@@ -33,4 +33,3 @@ console.log(`Time Elapsed ${(t2 - t1) / 1000} seconds`);
 
 // solution 2 is faster
 // Counting Operations - solution 2 has less operations (* + /) without loop
-// suman
