@@ -1,2 +1,0 @@
-language = "nodejs"
-run = "node bigO_1.js"
