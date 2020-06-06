@@ -25,7 +25,7 @@ const logTwoArg = (arr1, arr2) => {
 // two seperate inputs use +
 // two input and nested loops use *
 
-const logTwoArg = (arr1, arr2) => {
+const logTwoArg2 = (arr1, arr2) => {
   arr1.forEach((e) => {
     console.log(e);
     arr2.forEach((e) => console.log(e));
