@@ -1,2 +1,2 @@
 language = "nodejs"
-run = "node Big_O_notation/index.js"
+run = "node Exercises/01_logPairsOfArrayEle.js"
