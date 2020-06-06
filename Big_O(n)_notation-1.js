@@ -11,4 +11,4 @@ const findNemo = (array) => {
 console.log(`Call to find nemo took ${t1 - t0} milliseconds` )
 }
 
-findNemo(names)
+findNemo(names) // O(n) Liner Time
