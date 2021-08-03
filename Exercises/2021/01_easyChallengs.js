@@ -11,11 +11,14 @@ const matchString = (string, subString) => string.includes(subString);
 const nemo = ['nemo'];
 
 const findNemo = (array) => {
-  for(let i = 0; i < array.length; i++){
-    if(array[i] === 'nemo'){
+
+  for (let i = 0; i < array.length; i++) {
+    // const t0 = window.performance.now()
+    if (array[i] === 'nemo') {
       console.log('nemo found')
     }
+    // const t1 = window.performance.now()
   }
 }
 
-findNemo(nemo)
+findNemo(nemo);
