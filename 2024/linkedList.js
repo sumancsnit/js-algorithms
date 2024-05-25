@@ -102,7 +102,7 @@ class LinkedList {
   }
 
   remove(index) {
-    if (index < 0 || index >= this.length) return undefined ;
+    if (index < 0 || index >= this.length) return undefined;
     if (index === 0) return this.shift();
     if (index === this.length - 1) return this.pop();
     const leftSideNode = this.get(index - 1);
@@ -110,6 +110,21 @@ class LinkedList {
     leftSideNode.next = temp.next;
     this.length--;
     return true;
+  }
+
+  reverse() {
+    let current = this.head;
+    this.head = this.tail;
+    this.tail = current;
+    let next = current.next;
+    let prev = null;
+    for (let i = 0; i < this.length; i++) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+    return this;
   }
 }
 
@@ -123,9 +138,9 @@ myLinkedList.push(5);
 // myLinkedList.unshift(11);
 // myLinkedList.unshift(22);
 // myLinkedList.shift();
-console.log('remove', myLinkedList.remove(1));
-console.log('get', myLinkedList.get(3));
-console.log('insert', myLinkedList.insert(1, 97));
-console.log('get', myLinkedList.get(2));
+console.log('reverse', myLinkedList.reverse());
+for (let i = 0; i < 6; i++) {
+  console.log('get' + i, myLinkedList.get(i));
+}
 
 console.log('myLinkedList >>>>>>>', myLinkedList);
