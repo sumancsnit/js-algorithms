@@ -125,5 +125,7 @@ myLinkedList.push(5);
 // myLinkedList.shift();
 console.log('remove', myLinkedList.remove(1));
 console.log('get', myLinkedList.get(3));
+console.log('insert', myLinkedList.insert(1, 97));
+console.log('get', myLinkedList.get(2));
 
 console.log('myLinkedList >>>>>>>', myLinkedList);
