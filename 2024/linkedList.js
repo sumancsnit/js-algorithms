@@ -79,15 +79,28 @@ class LinkedList {
     }
     return temp;
   }
+
+  set(index, value) {
+    let temp = this.get(index);
+    if (temp) {
+      temp.value = value;
+      return true;
+    }
+    return false;
+  }
 }
 
 let myLinkedList = new LinkedList(1);
 myLinkedList.push(2);
 myLinkedList.push(3);
-console.log(myLinkedList.pop());
-myLinkedList.unshift(11);
-myLinkedList.unshift(22);
-myLinkedList.shift();
-console.log('get', myLinkedList.get(1));
+myLinkedList.push(4);
+myLinkedList.push(5);
+
+// console.log(myLinkedList.pop());
+// myLinkedList.unshift(11);
+// myLinkedList.unshift(22);
+// myLinkedList.shift();
+// console.log('get', myLinkedList.get(1));
+console.log('get', myLinkedList.set(1, 22));
 
 console.log('myLinkedList >>>>>>>', myLinkedList);
