@@ -88,6 +88,18 @@ class LinkedList {
     }
     return false;
   }
+
+  insert(index, value) {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return this.push(value);
+    if (index === 0) return this.unshift(value);
+    const newNode = new Node(value);
+    const leftSideNode = this.get(index - 1);
+    newNode.next = leftSideNode.next;
+    leftSideNode.next = newNode;
+    this.length++;
+    return true;
+  }
 }
 
 let myLinkedList = new LinkedList(1);
@@ -100,7 +112,7 @@ myLinkedList.push(5);
 // myLinkedList.unshift(11);
 // myLinkedList.unshift(22);
 // myLinkedList.shift();
-// console.log('get', myLinkedList.get(1));
-console.log('get', myLinkedList.set(1, 22));
+console.log('insert', myLinkedList.insert(1, 97));
+console.log('get', myLinkedList.get(2));
 
 console.log('myLinkedList >>>>>>>', myLinkedList);
