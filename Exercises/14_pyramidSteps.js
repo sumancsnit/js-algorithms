@@ -59,3 +59,19 @@ const pyramid2 = (n, row = 0, level = '') => {
 };
 
 pyramid2(3);
+
+function starPyramid(rows) {
+    for (let i = 1; i <= rows; i++) {
+        console.log(' '.repeat(rows - i) + '*'.repeat(2 * i - 1));
+    }
+}
+
+// Example usage
+starPyramid(5);
+/* Output:
+    *
+   ***
+  *****
+ *******
+*********
+*/
