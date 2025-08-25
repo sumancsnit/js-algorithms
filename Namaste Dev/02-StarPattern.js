@@ -130,3 +130,58 @@ const printDecreasingNumberTriangle = (n) => {
 // 1234
 // 123
 // 12
+// 1
+
+/**
+ * Prints a right-aligned triangle pattern using '_' and '#' characters.
+ * Each row has (n-i) underscores followed by i hashes.
+ * Example for n = 5:
+ * ____#
+ * ___##
+ * __###
+ * _####
+ * #####
+ */
+const printRightAlignedTriangle = (n) => {
+  for (let i = 1; i <= n; i++) {
+    console.log('_'.repeat(n - i) + '#'.repeat(i));
+  }
+};
+
+// Output for printRightAlignedTriangle(5):
+// ____#
+// ___##
+// __###
+// _####
+// #####
+
+/**
+ * Prints a left-aligned triangle pattern of alternating 1s and 0s.
+ * Each row contains i characters, where odd positions are '1' and even positions are '0'.
+ * Example for n = 6:
+ * 1
+ * 10
+ * 101
+ * 1010
+ * 10101
+ * 101010
+ */
+const printAlternatingBinaryTriangle = (n) => {
+  for (let i = 1; i <= n; i++) {
+    let row = '';
+    for (let j = 1; j <= i; j++) {
+      const text = j % 2 === 0 ? '0' : '1';
+      row += text;
+    }
+    console.log(row);
+  }
+};
+
+// Output for printAlternatingBinaryTriangle(6):
+// 1
+// 10
+// 101
+// 1010
+// 10101
+// 101010
+printAlternatingBinaryTriangle(6);
