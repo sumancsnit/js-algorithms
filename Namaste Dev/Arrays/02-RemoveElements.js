@@ -36,3 +36,18 @@ const val2 = 2;
 const k2 = removeElement(nums2, val2);
 console.log(k2); // Output: 5
 console.log(nums2.slice(0, k2)); // Output: [0,1,3,0,4] (order may vary)
+
+// solution 2
+
+var removeElement = function (nums, val) {
+  let k = 0; // Pointer for elements to keep
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      nums[k] = nums[i]; // Move non-target element to front
+      k++; // Increment position for next valid element
+    }
+  }
+
+  return k; // Return count of remaining elements
+};
