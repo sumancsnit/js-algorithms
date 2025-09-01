@@ -102,3 +102,29 @@ console.log('Test 4 - Empty nums1 (only zeros):');
 console.log('Input: nums1=[0,0,0], m=0, nums2=[1,2,3], n=3');
 console.log('Output:', test4_result);
 console.log('Expected: [1,2,3]\n');
+
+// solution 2
+
+const merge = (nums1, m, nums2, n) => {
+  // Initialize two pointers at the end of the actual elements in nums1 and nums2
+  let p1 = m - 1; // Pointer for last element in nums1's initial part
+  let p2 = n - 1; // Pointer for last element in nums2
+
+  // Start filling nums1 from the very end (index m + n - 1) going backwards
+  for (let i = m + n - 1; i >= 0; i--) {
+    // If nums2 is exhausted (p2 < 0) OR
+    // nums1's current element is greater than nums2's current element
+    if (p2 < 0 || (p1 >= 0 && nums1.at(p1) > nums2.at(p2))) {
+      // Place nums1's element at position i
+      nums1[i] = nums1.at(p1);
+      // Move p1 pointer leftward
+      p1--;
+    } else {
+      // Otherwise place nums2's element at position i
+      nums1[i] = nums2.at(p2);
+      // Move p2 pointer leftward
+      p2--;
+    }
+  }
+  // At the end, nums1 contains all elements from nums1 and nums2 in sorted order
+};
